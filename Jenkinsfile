@@ -12,9 +12,16 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean deploy -DskipTests'
+                sh 'mvn clean package -DskipTests'
             }
         }
+        stage('test') {
+    steps {
+        echo "*********** Test stage started ***********"
+        sh 'mvn test'
+        echo "*********** Test stage completed ***********"
+    }
+}
 
         stage('SonarQube analysis') {
             environment {
