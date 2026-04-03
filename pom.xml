@@ -90,7 +90,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- ✅ Updated Surefire plugin (fixes VM crash) -->
+            <!-- ✅ Surefire fix -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -100,7 +100,7 @@
                 </configuration>
             </plugin>
 
-            <!-- ✅ Updated Jacoco plugin -->
+            <!-- ✅ Updated Jacoco -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -125,3 +125,10 @@
     </build>
 
     <distributionManagement>
+        <repository>
+            <id>dev</id>
+            <url>file://jarstaging</url>
+        </repository>
+    </distributionManagement>
+
+</project>
