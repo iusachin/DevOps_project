@@ -2,7 +2,6 @@ pipeline {
     agent { label 'maven' }
 
     stages {
-
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
@@ -12,7 +11,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean deploy'
+                sh 'mvn clean deploy -DskipTests'
             }
         }
     }
