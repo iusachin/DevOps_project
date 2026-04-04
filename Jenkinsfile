@@ -63,8 +63,7 @@ pipeline {
     steps {
         sh '''
             echo "Starting new container..."
-            docker run -d --name demo-workshop -p 8080:8080 demo-workshop:latest
-            
+            docker run -d --name demo-workshop -p 8080:8000 demo-workshop:latest            
             echo "Container launched successfully!"
         '''
     }
