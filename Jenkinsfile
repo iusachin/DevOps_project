@@ -46,5 +46,18 @@ pipeline {
         }
     }
 }
+       stage('Docker Build & Push') {
+    steps {
+        script {
+            sh '''
+                echo "Building Docker image..."
+
+                docker build -t demo-workshop:latest .
+
+                echo "Image built successfully!"
+            '''
+        }
+    }
+}
     }
 }
